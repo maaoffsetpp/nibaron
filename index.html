@@ -13,23 +13,23 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* ১. নেভিগেশন বার ও লোগো এরিয়া (সম্পূর্ণ নতুন এবং চওড়া করা হয়েছে) */
+        /* ১. নেভিগেশন বার ও লোগো এরিয়া */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #002d62; 
-            padding: 15px 20px; /* দুই পাশের মার্জিন কমানো হয়েছে যেন লেখা বেশি জায়গা পায় */
+            padding: 15px 20px; 
         }
         .logo-area {
             display: flex;
             align-items: center;
             gap: 12px;
-            flex-shrink: 0; /* নাম যেন কোনো অবস্থাতেই চেপে ছোট না হয়ে যায় */
+            flex-shrink: 0; 
         }
         .brand-logo {
-            width: 100px; 
-            height: 50px;
+            width: 45px; 
+            height: 45px;
             border-radius: 5px;
             object-fit: cover;
         }
@@ -39,13 +39,13 @@
         }
         .logo-bangla {
             color: #ffffff;
-            font-size: 20px; /* ফন্ট সাইজ সামঞ্জস্যপূর্ণ করা হলো */
+            font-size: 20px; 
             font-weight: bold;
-            white-space: nowrap; /* লেখা কোনোভাবেই ভেঙে নিচে যাবে না */
+            white-space: nowrap; 
         }
         .logo-english {
             color: #a0c4ff;
-            font-size: 19px;
+            font-size: 11px;
             letter-spacing: 0.5px;
             white-space: nowrap;
         }
@@ -56,12 +56,12 @@
             padding: 0;
         }
         .nav-links li {
-            margin-left: 15px; /* মেনুর দূরত্ব কমানো হলো */
+            margin-left: 15px; 
         }
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 15px; /* মেনুর সাইজ কিছুটা ছোট করা হলো যাতে বামপাশে জায়গা বাড়ে */
+            font-size: 15px; 
             transition: 0.3s;
         }
         .nav-links a:hover {
@@ -85,7 +85,7 @@
             margin: 0;
         }
 
-        /* ৩. 서비스 সেকশন */
+        /* ৩. সার্ভিস সেকশন */
         .service-section {
             padding: 60px 20px;
             text-align: center;
@@ -103,7 +103,7 @@
         }
         .card {
             background-color: #ffffff;
-            width: 260px; /* কার্ডের সাইজ কিছুটা কমানো হলো ৪টি কার্ড সুন্দর দেখানোর জন্য */
+            width: 260px; 
             padding: 30px 20px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -140,7 +140,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        /* ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন */
+        /* ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন (পুনরায় সুন্দরভাবে সাজানো) */
         .contact-map-section {
             padding: 60px 20px;
             background-color: #ffffff;
@@ -149,7 +149,7 @@
         .grid-container {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: stretch;
             gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
@@ -157,10 +157,11 @@
         }
         .contact-form {
             flex: 1;
-            min-width: 300px;
+            min-width: 320px;
             display: flex;
             flex-direction: column;
             gap: 15px;
+            text-align: left;
         }
         .contact-form input, .contact-form textarea {
             padding: 12px;
@@ -168,26 +169,26 @@
             border-radius: 5px;
             font-size: 16px;
             font-family: inherit;
+            width: 100%;
+            box-sizing: border-box; /* উইডথ যাতে বাইরে চলে না যায় */
         }
         .submit-btn {
             background-color: #002d62;
             color: white;
             border: none;
-            padding: 12px;
+            padding: 14px;
             font-size: 18px;
             border-radius: 5px;
             cursor: pointer;
             transition: 0.3s;
+            width: 100%;
         }
         .submit-btn:hover {
             background-color: #001f44;
         }
-        .map-container {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        <div class="map-container">
+                <iframe src="https://google.com" width="100%" height="340" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         }
 
         /* ৫. ফুটার সেকশন */
@@ -265,15 +266,15 @@
     <div class="contact-map-section">
         <h2 class="section-title">যোগাযোগ ও লোকেশন</h2>
         <div class="grid-container">
-            <form class="contact-form">
-                <input type="text" placeholder="আপনার নাম" required>
-                <input type="email" placeholder="আপনার ইমেইল বা মোবাইল নম্বর" required>
-                <textarea placeholder="আপনি কী প্রিন্ট করতে চান বিস্তারিত লিখুন..." rows="5" required></textarea>
+            <form class="contact-form" id="whatsappForm">
+                <input type="text" id="custName" placeholder="আপনার নাম" required>
+                <input type="email" id="custContact" placeholder="আপনার ইমেইল বা মোবাইল নম্বর" required>
+                <textarea id="custMessage" placeholder="আপনি কী প্রিন্ট করতে চান বিস্তারিত লিখুন..." rows="5" required></textarea>
                 <button type="submit" class="submit-btn">বার্তা পাঠান</button>
             </form>
             
             <div class="map-container">
-                <iframe src="https://google.com" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://google.com" width="100%" height="100%" style="border:0; min-height: 340px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
@@ -285,5 +286,14 @@
         <p class="copyright">&copy; ২০২৬ মা অফসেট প্রিন্টিং প্রেস। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-</body>
-</html>
+    <!-- হোয়াটসঅ্যাপ মেসেজ পাঠানোর ম্যাজিক কোড -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            var name = document.getElementById('custName').value;
+            var contact = document.getElementById('custContact').value;
+            var msg = document.getElementById('custMessage').value;
+            var phoneNumber = "8801735652990"; 
+            var textMessage = "*নতুন প্রিন্টিং অর্ডার অনুসন্ধান*%0A%0A" +
+                              "*নাম:* " + name + "%0A" +
+                              "*যোগাযোগ:* " + contact + "%0A" +
