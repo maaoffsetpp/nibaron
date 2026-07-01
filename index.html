@@ -140,9 +140,47 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        /* ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন (পুনরায় সুন্দরভাবে সাজানো) */
-        .contact-map-section {
+        /* আমাদের করা কাজের নমুনা (Portfolio) */
+        .portfolio-section {
             padding: 60px 20px;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        .portfolio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .portfolio-item {
+            background-color: #ffffff;
+            width: 240px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .portfolio-item h4 {
+            margin: 12px 0;
+            color: #002d62;
+            font-size: 16px;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        /* ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন (স্ক্রোল ফিক্স করা হয়েছে) */
+        .contact-map-section {
+            padding: 60px 20px 100px 20px; /* নিচে ১০০ পিক্সেল বাড়তি জায়গা দেওয়া হলো স্ক্রোল করার জন্য */
             background-color: #ffffff;
             text-align: center;
         }
@@ -170,7 +208,7 @@
             font-size: 16px;
             font-family: inherit;
             width: 100%;
-            box-sizing: border-box; /* উইডথ যাতে বাইরে চলে না যায় */
+            box-sizing: border-box;
         }
         .submit-btn {
             background-color: #002d62;
@@ -186,9 +224,13 @@
         .submit-btn:hover {
             background-color: #001f44;
         }
-        <div class="map-container">
-                <iframe src="https://google.com" width="100%" height="340" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+        .map-container {
+            flex: 1;
+            min-width: 320px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-height: 350px;
         }
 
         /* ৫. ফুটার সেকশন */
@@ -196,7 +238,7 @@
             background-color: #002d62;
             color: #ffffff;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 16px;
         }
         .footer p {
@@ -246,7 +288,7 @@
             </div>
             <div class="card">
                 <h3>ক্যাশ মেমো ও বিল বই</h3>
-                <p>যেকোনো সাইজের কার্বন বা নন-কার্বন পেপারে নিখুঁত দাগকাটা ক্যাশ মেমো ও চালান বই।</p>
+                <p>যেকেোনো সাইজের কার্বন বা নন-কার্বন পেপারে নিখুঁত দাগকাটা ক্যাশ মেমো ও চালান বই।</p>
                 <button class="card-btn">অর্ডার করুন</button>
             </div>
             <div class="card">
@@ -262,38 +304,31 @@
         </div>
     </div>
 
+    <!-- আমাদের করা কাজের নমুনা (Portfolio) -->
+    <div class="portfolio-section">
+        <h2 class="section-title">আমাদের কিছু সেরা কাজ</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="work1.jpg" alt="কাজের নমুনা ১">
+                <h4>কালারফুল লিফলেট</h4>
+            </div>
+            <div class="portfolio-item">
+                <img src="work2.jpg" alt="কাজের নমুনা ২">
+                <h4>ডিজিটাল মেমো বই</h4>
+            </div>
+            <div class="portfolio-item">
+                <img src="work3.jpg" alt="কাজের নমুনা ৩">
+                <h4>প্রিমিয়াম ভিজিটিং কার্ড</h4>
+            </div>
+            <div class="portfolio-item">
+                <img src="work4.jpg" alt="কাজের নমুনা ৪">
+                <h4>রথযাত্রা উৎসব ব্যানার</h4>
+            </div>
+        </div>
+    </div>
+
     <!-- ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন -->
     <div class="contact-map-section">
         <h2 class="section-title">যোগাযোগ ও লোকেশন</h2>
         <div class="grid-container">
             <form class="contact-form" id="whatsappForm">
-                <input type="text" id="custName" placeholder="আপনার নাম" required>
-                <input type="email" id="custContact" placeholder="আপনার ইমেইল বা মোবাইল নম্বর" required>
-                <textarea id="custMessage" placeholder="আপনি কী প্রিন্ট করতে চান বিস্তারিত লিখুন..." rows="5" required></textarea>
-                <button type="submit" class="submit-btn">বার্তা পাঠান</button>
-            </form>
-            
-            <div class="map-container">
-                <iframe src="https://google.com" width="100%" height="100%" style="border:0; min-height: 340px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- ৫. ফুটার সেকশন -->
-    <footer class="footer">
-        <p>📍 মা অফসেট প্রিন্টিং প্রেস | ঠিকানা: স্বপ্নদ্বীপ শপিংমল (দ্বিতীয় তলা), মোগরাপাড়া চৌরাস্তা, থানা রোড, সোনারগাঁও, নারায়ণগঞ্জ, বাংলাদেশ।</p>
-        <p>📞 মোবাইল: +88 01735-652990 | ✉️ ইমেইল: nibaronchandra1@gmail.com</p>
-        <p class="copyright">&copy; ২০২৬ মা অফসেট প্রিন্টিং প্রেস। সর্বস্বত্ব সংরক্ষিত।</p>
-    </footer>
-
-    <!-- হোয়াটসঅ্যাপ মেসেজ পাঠানোর ম্যাজিক কোড -->
-    <script>
-        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            var name = document.getElementById('custName').value;
-            var contact = document.getElementById('custContact').value;
-            var msg = document.getElementById('custMessage').value;
-            var phoneNumber = "8801735652990"; 
-            var textMessage = "*নতুন প্রিন্টিং অর্ডার অনুসন্ধান*%0A%0A" +
-                              "*নাম:* " + name + "%0A" +
-                              "*যোগাযোগ:* " + contact + "%0A" +
