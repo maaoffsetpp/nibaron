@@ -76,7 +76,7 @@
         }
         .hero h1 {
             color: #ff4500;
-            font-size: 45px;
+            font-size: 55px;
             margin: 0 0 15px 0;
         }
         .hero p {
@@ -288,7 +288,7 @@
             </div>
             <div class="card">
                 <h3>ক্যাশ মেমো ও বিল বই</h3>
-                <p>যেকেোনো সাইজের কার্বন বা নন-কার্বন পেপারে নিখুঁত দাগকাটা ক্যাশ মেমো ও চালান বই।</p>
+                <p>যেকোন সাইজের কার্বন বা নন-কার্বন পেপারে নিখুঁত দাগকাটা ক্যাশ মেমো ও চালান বই।</p>
                 <button class="card-btn">অর্ডার করুন</button>
             </div>
             <div class="card">
@@ -298,7 +298,7 @@
             </div>
             <div class="card">
                 <h3>তৈরি করা বিয়ের কার্ড</h3>
-                <p>আকর্ষণীয় চমৎকার ডিজাইনে তৈরি করুন বিয়ের ও উৎসবের নিমন্ত্রণ কার্ড।</p>
+                <p>আকর্ষণীয় চমৎকার ডিজাইনে তৈরি করুন বিয়ের ও অন্যান্য নিমন্ত্রণ কার্ড।</p>
                 <button class="card-btn">অর্ডার করুন</button>
             </div>
         </div>
@@ -338,19 +338,22 @@
                 <button type="submit" class="submit-btn">বার্তা পাঠান</button>
             </form>
             
-            <div class="map-container">
-                <iframe src="https://google.com" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- ১০০% ওয়ার্কিং ম্যাপ এবং ডিরেকশন সেকশন -->
+            <div class="map-container" style="background-color: #f1f3f4; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center;">
+                <span style="font-size: 50px; margin-bottom: 10px;">📍</span>
+                <h3 style="color: #002d62; margin: 0 0 10px 0; font-size: 20px;">আমাদের গুগল ম্যাপ লোকেশন</h3>
+                <p style="color: #555; font-size: 14px; margin-bottom: 20px; padding: 0 10px;">স্বপ্নদ্বীপ শপিংমল, মোগরাপাড়া চৌরাস্তা, সোনারগাঁও, নারায়ণগঞ্জ।</p>
+                <a href="https://www.google.com/maps/place/Maa+Offset+Printing+Press/@23.636255,90.595222,119m/data=!3m1!1e3!4m14!1m7!3m6!1s0x3755b330dc266c4f:0x7917a66610672d09!2sMaa+Offset+Printing+Press!8m2!3d23.6363596!4d90.595684!16s%2Fg%2F11c2pnt4r0!3m5!1s0x3755b330dc266c4f:0x7917a66610672d09!8m2!3d23.6363596!4d90.595684!16s%2Fg%2F11c2pnt4r0?authuser=0&entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="background-color: #28a745; color: white; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-weight: bold; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">গুগল ম্যাপে রাস্তা দেখুন (Open Map)</a>
+            </div>
             </div>
         </div>
     </div>
-
     <!-- ৫. ফুটার সেকশন -->
     <footer class="footer">
         <p>📍 মা অফসেট প্রিন্টিং প্রেস | ঠিকানা: স্বপ্নদ্বীপ শপিংমল (দ্বিতীয় তলা), মোগরাপাড়া চৌরাস্তা, থানা রোড, সোনারগাঁও, নারায়ণগঞ্জ, বাংলাদেশ।</p>
         <p>📞 মোবাইল: +88 01735-652990 | ✉️ ইমেইল: nibaronchandra1@gmail.com</p>
         <p class="copyright">&copy; ২০২৬ মা অফসেট প্রিন্টিং প্রেস। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
-
     <!-- হোয়াটসঅ্যাপ মেসেজ পাঠানোর ম্যাজিক কোড -->
     <script>
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
@@ -358,12 +361,12 @@
             var name = document.getElementById('custName').value;
             var contact = document.getElementById('custContact').value;
             var msg = document.getElementById('custMessage').value;
-            var phoneNumber = "8801735652990"; 
+            var phoneNumber = "+8801735652990"; 
             var textMessage = "*নতুন প্রিন্টিং অর্ডার অনুসন্ধান*%0A%0A" +
                               "*নাম:* " + name + "%0A" +
                               "*যোগাযোগ:* " + contact + "%0A" +
                               "*বিস্তারিত:* " + msg;
-            var whatsappUrl = "https://whatsapp.com" + phoneNumber + "&text=" + textMessage;
+            var whatsappUrl = "https://whatsapp.com" +8801735652990+ "&text=" + textMessage;
             window.open(whatsappUrl, '_blank');
         });
     </script>
