@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মা অফসেট প্রিন্টিং প্রেস | Maa Offset Printing Press</title>
+    <style>
+        /* পুরো ওয়েবসাইটের সাধারণ স্টাইল */
+        body {
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ১. নেভিগেশন বার ও লোগো এরিয়া */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #002d62; 
+            padding: 15px 20px; 
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0; 
+        }
+        .brand-logo {
+            width: 90px; 
+            height: 45px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-bangla {
+            color: #ffffff;
+            font-size: 20px; 
+            font-weight: bold;
+            white-space: nowrap; 
+        }
+        .logo-english {
+            color: #a0c4ff;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 15px; 
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px; 
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ff4500;
+        }
+
+        /* ২. স্বাগত ব্যানার সেকশন */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+        .hero h1 {
+            color: #ff4500;
+            font-size: 55px;
+            margin: 0 0 15px 0;
+        }
+        .hero p {
+            color: #333333;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        /* ৩. সার্ভিস সেকশন */
+        .service-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 32px;
+            color: #002d62;
+            margin-bottom: 40px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #ffffff;
+            width: 260px; 
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            text-align: center;
+        }
+        .card h3 {
+            color: #002d62;
+            font-size: 22px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        .card p {
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .card-btn {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card-btn:hover {
+            background-color: #e03d00;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* আমাদের করা কাজের নমুনা (Portfolio) */
+        .portfolio-section {
+            padding: 60px 20px;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        .portfolio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .portfolio-item {
+            background-color: #ffffff;
+            width: 240px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .portfolio-item h4 {
+            margin: 12px 0;
+            color: #002d62;
+            font-size: 16px;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        /* ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন (স্ক্রোল ফিক্স করা হয়েছে) */
+        .contact-map-section {
+            padding: 60px 20px 100px 20px; /* নিচে ১০০ পিক্সেল বাড়তি জায়গা দেওয়া হলো স্ক্রোল করার জন্য */
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .grid-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: inherit;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background-color: #002d62;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #001f44;
+        }
+        .map-container {
+            flex: 1;
+            min-width: 320px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-height: 350px;
+        }
+
+        /* ৫. ফুটার সেকশন */
+        .footer {
+            background-color: #002d62;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 16px;
+        }
+        .footer p {
+            margin: 5px 0;
+            color: #ffffff;
+        }
+        .footer .copyright {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #a0c4ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ১. নেভিগেশন বার ও লোগো এরিয়া -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="logo.png" alt="Maa Offset Logo" class="brand-logo">
+            <div class="logo-text">
+                <span class="logo-bangla">মা অফসেট প্রিন্টিং প্রেস</span>
+                <span class="logo-english">Maa Offset Printing Press</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">হোম</a></li>
+            <li><a href="#">আমাদের সেবা</a></li>
+            <li><a href="#">পোর্টফোলিও</a></li>
+            <li><a href="#">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <!-- ২. স্বাগত ব্যানার সেকশন -->
+    <div class="hero">
+        <h1>মা অফসেট প্রিন্টিং প্রেস</h1>
+        <p>সঠিক সময়ে ডেলিভারী, নিখুঁত ও উন্নত মানের প্রিন্টিংয়ের বিশ্বস্ত প্রতিষ্ঠান।</p>
+    </div>
+
+    <!-- ৩. সার্ভিস সেকশন -->
+    <div class="service-section">
+        <h2 class="section-title">আমাদের সেবাসমূহ</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>ভিজিটিং কার্ড</h3>
+                <p>উন্নত মানের পেপার ও নিখুঁত প্রিন্টিংয়ে আপনার ব্যবসার জন্য আকর্ষণীয় বিজনেস কার্ড।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+            <div class="card">
+                <h3>ক্যাশ মেমো ও বিল বই</h3>
+                <p>যেকোন সাইজের কার্বন বা নন-কার্বন পেপারে নিখুঁত দাগকাটা ক্যাশ মেমো ও চালান বই।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+            <div class="card">
+                <h3>লিফলেট ও পোস্টার</h3>
+                <p>আপনার ব্যবসার প্রচার বাড়াতে আকর্ষণীয় ডিজাইনে রঙিন লিফলেট ও হ্যান্ডবিল।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+            <div class="card">
+                <h3>তৈরি করা বিয়ের কার্ড</h3>
+                <p>আকর্ষণীয় চমৎকার ডিজাইনে তৈরি করুন বিয়ের ও অন্যান্য নিমন্ত্রণ কার্ড।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- আমাদের করা কাজের নমুনা (Portfolio) -->
+    <div class="portfolio-section">
+        <h2 class="section-title">আমাদের করা কিছু কাজ</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="work1.jpg" alt="কাজের নমুনা ১">
+                <h4>কালারফুল লিফলেট</h4>
+            </div>
+            <div class="portfolio-item">
+                <img src="work2.jpg" alt="কাজের নমুনা ২">
+                <h4>ডিজিটাল মেমো বই</h4>
+            </div>
+            <div class="portfolio-item">
+                <img src="work3.jpg" alt="কাজের নমুনা ৩">
+                <h4>প্রিমিয়াম ভিজিটিং কার্ড</h4>
+            </div>
+            <div class="portfolio-item">
+                <img src="work4.jpg" alt="কাজের নমুনা ৪">
+                <h4>রথযাত্রা উৎসব ব্যানার</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন -->
+    <div class="contact-map-section">
+        <h2 class="section-title">যোগাযোগ ও লোকেশন</h2>
+        <div class="grid-container">
+            <form class="contact-form" id="whatsappForm">
+                <input type="text" id="custName" placeholder="আপনার নাম" required>
+                <input type="email" id="custContact" placeholder="আপনার ইমেইল বা মোবাইল নম্বর" required>
+                <textarea id="custMessage" placeholder="আপনি কী প্রিন্ট করতে চান বিস্তারিত লিখুন..." rows="5" required></textarea>
+                <button type="submit" class="submit-btn">বার্তা পাঠান</button>
+            </form>
+            <!-- ১০০% ওয়ার্কিং ম্যাপ এবং ডিরেকশন সেকশন -->
+            <div class="map-container" style="background-color: #f1f3f4; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center;">
+                <span style="font-size: 50px; margin-bottom: 10px;">📍</span>
+                <h3 style="color: #002d62; margin: 0 0 10px 0; font-size: 20px;">আমাদের গুগল ম্যাপ লোকেশন</h3>
+                <p style="color: #555; font-size: 14px; margin-bottom: 20px; padding: 0 10px;">স্বপ্নদ্বীপ শপিংমল, মোগরাপাড়া চৌরাস্তা, সোনারগাঁও, নারায়ণগঞ্জ।</p>
+                <a href="https://www.google.com/maps/place/Maa+Offset+Printing+Press/@23.636255,90.595222,119m/data=!3m1!1e3!4m14!1m7!3m6!1s0x3755b330dc266c4f:0x7917a66610672d09!2sMaa+Offset+Printing+Press!8m2!3d23.6363596!4d90.595684!16s%2Fg%2F11c2pnt4r0!3m5!1s0x3755b330dc266c4f:0x7917a66610672d09!8m2!3d23.6363596!4d90.595684!16s%2Fg%2F11c2pnt4r0?authuser=0&entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="background-color: #28a745; color: white; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-weight: bold; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">গুগল ম্যাপে রাস্তা দেখুন (Open Map)</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- ৫. ফুটার সেকশন -->
+    <footer class="footer">
+        <p>📍 মা অফসেট প্রিন্টিং প্রেস | ঠিকানা: স্বপ্নদ্বীপ শপিংমল (দ্বিতীয় তলা), মোগরাপাড়া চৌরাস্তা, থানা রোড, সোনারগাঁও, নারায়ণগঞ্জ, বাংলাদেশ।</p>
+        <p>📞 মোবাইল: +88 01735-652990 | ✉️ ইমেইল: nibaronchandra1@gmail.com</p>
+        <p class="copyright">&copy; ২০২৬ মা অফসেট প্রিন্টিং প্রেস। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+    <!-- হোয়াটসঅ্যাপ মেসেজ পাঠানোর ম্যাজিক কোড -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            var name = document.getElementById('custName').value;
+            var contact = document.getElementById('custContact').value;
+            var msg = document.getElementById('custMessage').value;
+            var phoneNumber = "8801735652990"; 
+            var textMessage = "*নতুন প্রিন্টিং অর্ডার অনুসন্ধান*%0A%0A" +
+                              "*নাম:* " + name + "%0A" +
+                              "*যোগাযোগ:* " + contact + "%0A" +
+                              "*বিস্তারিত:* " + msg;
+            var whatsappUrl = "https://whatsapp.com" + phoneNumber + "&text=" + textMessage;
+            window.open(whatsappUrl, '_blank');
+        });
+</body>
+</html>
