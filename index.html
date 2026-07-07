@@ -356,19 +356,23 @@
     
     <!-- হোয়াটসঅ্যাপ মেসেজ পাঠানোর ম্যাজিক কোড -->
     <script>
-        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
+        document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+            e.preventDefault();
             var name = document.getElementById('custName').value;
             var contact = document.getElementById('custContact').value;
             var msg = document.getElementById('custMessage').value;
-            var phoneNumber = "8801735652990"; 
+            var phoneNumber = "8801735652990";
+
             var textMessage = "*নতুন প্রিন্টিং অর্ডার অনুসন্ধান*%0A%0A" +
-                              "*নাম:* " + name + "%0A" +
-                              "*যোগাযোগ:* " + contact + "%0A" +
-                              "*বিস্তারিত:* " + msg;
-            var whatsappUrl = "https://whatsapp.com" + phoneNumber + "&text=" + textMessage;
+                "*নাম:* " + encodeURIComponent(name) + "%0A" +
+                "*যোগাযোগ:* " + encodeURIComponent(contact) + "%0A" +
+                "*বিস্তারিত:* " + encodeURIComponent(msg);
+
+            // এখানে অফিশিয়াল wa.me লিংক ফরম্যাটটি ব্যবহার করা হয়েছে
+            var whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + textMessage;
+
             window.open(whatsappUrl, '_blank');
         });
-
+    </script>
 </body>
 </html>
