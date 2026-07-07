@@ -337,7 +337,6 @@
                 <textarea id="custMessage" placeholder="আপনি কী প্রিন্ট করতে চান বিস্তারিত লিখুন..." rows="5" required></textarea>
                 <button type="submit" class="submit-btn">বার্তা পাঠান</button>
             </form>
-            
             <!-- ১০০% ওয়ার্কিং ম্যাপ এবং ডিরেকশন সেকশন -->
             <div class="map-container" style="background-color: #f1f3f4; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center;">
                 <span style="font-size: 50px; margin-bottom: 10px;">📍</span>
@@ -354,6 +353,7 @@
         <p>📞 মোবাইল: +88 01735-652990 | ✉️ ইমেইল: nibaronchandra1@gmail.com</p>
         <p class="copyright">&copy; ২০২৬ মা অফসেট প্রিন্টিং প্রেস। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
+    
     <!-- হোয়াটসঅ্যাপ মেসেজ পাঠানোর ম্যাজিক কোড -->
     <script>
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
@@ -361,15 +361,14 @@
             var name = document.getElementById('custName').value;
             var contact = document.getElementById('custContact').value;
             var msg = document.getElementById('custMessage').value;
-            var phoneNumber = "+8801735652990"; 
+            var phoneNumber = "8801735652990"; 
             var textMessage = "*নতুন প্রিন্টিং অর্ডার অনুসন্ধান*%0A%0A" +
                               "*নাম:* " + name + "%0A" +
                               "*যোগাযোগ:* " + contact + "%0A" +
                               "*বিস্তারিত:* " + msg;
-            var whatsappUrl = "https://whatsapp.com" +8801735652990+ "&text=" + textMessage;
+            var whatsappUrl = "https://whatsapp.com" + phoneNumber + "&text=" + textMessage;
             window.open(whatsappUrl, '_blank');
         });
-    </script>
 
 </body>
 </html>
